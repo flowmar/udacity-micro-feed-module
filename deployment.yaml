@@ -3,9 +3,9 @@ kind: Deployment
 metadata:
   name: feed
   labels:
-    app: feed
+    service: feed
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: feed
@@ -19,3 +19,4 @@ spec:
           image: flowmar/feed-module
           ports:
             - containerPort: 80
+          restartPolicy: Always
